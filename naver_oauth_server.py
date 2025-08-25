@@ -10,6 +10,10 @@ from flask import Flask, redirect, request, session, jsonify, make_response
 from flask import Flask, request, redirect
 from naver_openapi import auth_url, exchange_token
 
+@app.get("/health")
+def health():
+    return {"ok": True}
+
 app = Flask(__name__)
 
 @app.get("/")
@@ -33,7 +37,5 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", "10000"))  # Render가 주입하는 포트를 사용
     app.run(host="0.0.0.0", port=port)           # 외부 접속 허용
 
-@app.get("/health")
-def health():
-    return {"ok": True}
+
 
