@@ -1,11 +1,12 @@
 import os
 import secrets
-from flask import Flask, request, redirect, jsonify, make_response
+from flask import Flask, request, redirect, jsonify, make_response, render_template
 
 # naver_openapi.py의 헬퍼 사용
 from naver_openapi import auth_url, exchange_token
 
-app = Flask(__name__)
+# 템플릿/정적 파일 폴더 지정 (site 폴더 재사용)
+app = Flask(__name__, template_folder="site", static_folder="site")
 app.secret_key = os.environ.get("FLASK_SECRET_KEY", secrets.token_hex(16))
 
 # ───────────────────────── routes ─────────────────────────
@@ -17,7 +18,7 @@ def health():
 
 @app.route("/", methods=["GET"])
 def home():
-    return '<a href="/naver_auth">네이버 블로그 연동 시작</a>'
+    return render_template("index.html")
 
 @app.route("/naver_auth", methods=["GET"])
 def naver_auth():

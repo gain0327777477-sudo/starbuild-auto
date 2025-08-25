@@ -1,33 +1,97 @@
 <!doctype html>
 <html lang="ko">
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>스타빌드 자동포스팅</title>
-<style>
-body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Apple SD Gothic Neo,Malgun Gothic,sans-serif;margin:40px;line-height:1.6}
-.btn{display:inline-block;padding:12px 18px;background:#03C75A;color:#fff;text-decoration:none;border-radius:8px}
-.card{max-width:720px}
-small{color:#666}
-</style>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Starbuild Access – 네이버 로그인</title>
+
+  <!-- 검수용 설명이 검색에 과도하게 노출되지 않도록 하고 싶다면 주석 해제
+  <meta name="robots" content="noindex,follow">
+  -->
+
+  <style>
+    :root{
+      --green:#03c75a; --bg:#f7f8fa; --ink:#111; --sub:#61646b; --line:#e6e8eb;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Apple SD Gothic Neo,Noto Sans KR,Helvetica,Arial,sans-serif;
+      color:var(--ink); background:var(--bg);
+    }
+    .wrap{max-width:920px;margin:0 auto;padding:48px 20px}
+    header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
+    .logo{font-weight:800;letter-spacing:.2px}
+    .badge{display:inline-block;padding:4px 10px;border-radius:999px;background:#eaf8f0;color:#0a7b3c;font-weight:700;font-size:12px}
+    .card{
+      background:#fff;border:1px solid var(--line);border-radius:16px;
+      padding:36px; box-shadow:0 6px 24px rgba(17,17,17,.06);
+    }
+    h1{margin:0 0 12px;font-size:28px}
+    p.lead{margin:0 0 18px;color:var(--sub);line-height:1.6}
+    ul{margin:16px 0 0;padding:0 0 0 18px;color:#2b2f36;line-height:1.65}
+    .cta{
+      margin-top:28px; display:flex; gap:12px; flex-wrap:wrap;
+    }
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:14px 18px;border-radius:12px;border:1px solid var(--line);
+      background:#fff;color:var(--ink);text-decoration:none;font-weight:700;
+    }
+    .btn.naver{
+      background:var(--green); color:#fff; border-color:var(--green);
+    }
+    .btn small{opacity:.8;font-weight:600}
+    footer{margin-top:28px;color:var(--sub);font-size:13px;display:flex;gap:14px;flex-wrap:wrap}
+    footer a{color:inherit;text-decoration:none}
+    @media (max-width:520px){
+      .card{padding:24px}
+      h1{font-size:22px}
+    }
+  </style>
+</head>
 <body>
-  <div class="card">
-    <h1>스타빌드 자동포스팅</h1>
-    <p>부동산 모텔 매매/임대 매물을 네이버 블로그에 <b>자동/예약 발행</b>하는 도구입니다.<br>
-       이용자는 <b>네이버 로그인</b>으로 본인 블로그 글쓰기 권한을 위임합니다.</p>
+  <div class="wrap">
+    <header>
+      <div class="logo">Starbuild Access</div>
+      <span class="badge">OAuth 인증</span>
+    </header>
 
-    <!-- 검수 자료용 버튼(실제 동작은 콜백 서버로 유도) -->
-    <p><a class="btn" href="https://starbuild-auto.onrender.com/naver_auth">네이버로 로그인</a></p>
+    <main class="card" role="main" aria-label="서비스 소개 및 로그인">
+      <h1>안전한 본인확인을 위한 네이버 로그인</h1>
+      <p class="lead">
+        Starbuild Access는 <strong>단순 OAuth 인증</strong> 서비스입니다.  
+        사용자가 네이버 계정으로 로그인할 때 <strong>본인 확인만을 목적</strong>으로 하며,
+        <strong>이메일 주소</strong>는 회원 식별 및 서비스 알림 전달을 위해 <strong>최소한으로 요청</strong>합니다.
+        그 외의 불필요한 개인정보는 <strong>수집하지 않습니다.</strong>
+      </p>
 
-    <h3>어떻게 동작하나요?</h3>
-    <ol>
-      <li>네이버로 로그인(동의)</li>
-      <li>콜백 서버가 토큰을 발급/저장</li>
-      <li>텔레그램/대시보드에서 글 내용/스케줄 설정</li>
-      <li>서버가 사용자의 블로그에 자동 발행</li>
-    </ol>
+      <ul>
+        <li>네이버 계정으로 안전하게 로그인 (OAuth 2.0)</li>
+        <li>필수 수집 항목: <strong>이메일 주소</strong> (회원 식별, 알림 발송 목적)</li>
+        <li>불필요한 개인정보 <strong>일체 미수집</strong></li>
+      </ul>
 
-    <p><a href="/privacy.html">개인정보처리방침</a> · <a href="/tos.html">이용약관</a></p>
-    <p><small>© 2025 StarBuild</small></p>
+      <div class="cta">
+        <a class="btn naver" href="/naver_auth" aria-label="네이버 계정으로 로그인">
+          <!-- 간단한 네이버 아이콘 형태 -->
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <rect width="24" height="24" rx="4" fill="white" />
+            <path d="M10.4 7.2v4.48L13.6 7.2H16v9.6h-2.4v-4.48L10.4 16.8H8V7.2h2.4z" fill="#03c75a"/>
+          </svg>
+          네이버로 로그인
+        </a>
+
+        <a class="btn" href="/health"><small>상태확인</small></a>
+        <a class="btn" href="/privacy" aria-label="개인정보처리방침 보기"><small>개인정보처리방침</small></a>
+        <a class="btn" href="/tos" aria-label="이용약관 보기"><small>이용약관</small></a>
+      </div>
+    </main>
+
+    <footer>
+      <span>© Starbuild Access</span>
+      <a href="mailto:help@starbuild.example">문의: help@starbuild.example</a>
+    </footer>
   </div>
 </body>
 </html>
