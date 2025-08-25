@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <title>네이버 로그인 동의 | Starbuild Access</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { --naver:#03c75a; --text:#111; --muted:#666; --line:#e5e8eb; }
+    *{box-sizing:border-box} body{margin:0;background:#f7f9fa;color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Apple SD Gothic Neo,Malgun Gothic,"맑은 고딕",sans-serif}
+    .bar{height:44px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:0 14px;position:sticky;top:0}
+    .dot{width:10px;height:10px;border-radius:50%} .d1{background:#ff5f56}.d2{background:#ffbd2e}.d3{background:#27c93f}
+    .url{flex:1;background:#f0f2f4;border-radius:8px;padding:8px 12px;font-size:12px;color:#333;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .wrap{max-width:800px;margin:36px auto;padding:0 16px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 4px 16px rgba(0,0,0,.04);overflow:hidden}
+    .head{display:flex;align-items:center;justify-content:center;padding:28px 12px 8px}
+    .logo{font-weight:800;font-size:42px;letter-spacing:2px;color:var(--naver)}
+    .service{font-size:22px;font-weight:700;margin:10px 0 6px;text-align:center}
+    .subtitle{font-size:15px;color:var(--muted);text-align:center;margin-bottom:18px}
+    .scope{margin:0 20px 20px;padding:18px;border:1px solid var(--line);border-radius:12px;background:#fbfcfc}
+    .scope-title{display:flex;align-items:center;gap:10px;font-weight:700;margin-bottom:8px}
+    .badge{display:inline-block;font-size:11px;padding:2px 6px;border-radius:999px;background:#eef7f1;color:#1f7a45;border:1px solid #cfeedd}
+    .scope-desc{font-size:14px;color:#333;margin-left:32px}
+    .actions{display:flex;gap:12px;justify-content:center;padding:16px 20px 24px;border-top:1px solid var(--line)}
+    .btn{min-width:140px;height:44px;border-radius:10px;font-weight:700;border:1px solid var(--line);background:#fff;cursor:pointer}
+    .btn-primary{background:var(--naver);border-color:var(--naver);color:#fff}
+    .footer{font-size:12px;color:var(--muted);text-align:center;padding:14px 18px 20px}
+    a{color:#3b82f6;text-decoration:none}
+  </style>
+</head>
+<body>
+  <!-- 상단 URL 표시(캡처용) -->
+  <div class="bar">
+    <div class="dot d1"></div><div class="dot d2"></div><div class="dot d3"></div>
+    <div class="url">https://starbuild-auto.onrender.com</div>
+  </div>
+
+  <main class="wrap">
+    <div class="card">
+      <div class="head"><div class="logo">NAVER</div></div>
+
+      <div class="service">Starbuild Access 님이</div>
+      <div class="subtitle">아래의 권한에 대한 접근을 요청합니다.</div>
+
+      <section class="scope">
+        <div class="scope-title">
+          <div style="width:24px;height:24px;border:2px solid var(--line);border-radius:6px;display:inline-block;"></div>
+          <div>이메일 <span class="badge">필수 정보</span></div>
+        </div>
+        <div class="scope-desc">이메일 주소 수집(회원 식별 및 알림 발송 목적)</div>
+      </section>
+
+      <div class="actions">
+        <button class="btn" onclick="history.back()">취소</button>
+        <button class="btn btn-primary" onclick="location.href='callback.html'">동의하기</button>
+      </div>
+
+      <div class="footer">
+        안전한 서비스 이용을 위해 로그인 또는 가입이 필요할 수 있습니다.<br />
+        실제 로그인은 서비스 내 OAuth 플로우에서 진행됩니다. (본 페이지는 검수용 정적 화면입니다)
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <title>Callback Success | Starbuild Access</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root{--ok:#16a34a;--line:#e5e8eb;--muted:#6b7280;--text:#0f172a}
+    *{box-sizing:border-box} body{margin:0;background:#f7f9fa;color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Roboto,Apple SD Gothic Neo,Malgun Gothic,"맑은 고딕",sans-serif}
+    .bar{height:44px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:8px;padding:0 14px}
+    .dot{width:10px;height:10px;border-radius:50%}.d1{background:#ff5f56}.d2{background:#ffbd2e}.d3{background:#27c93f}
+    .url{flex:1;background:#f0f2f4;border-radius:8px;padding:8px 12px;font-size:12px;color:#333;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .wrap{max-width:900px;margin:36px auto;padding:0 16px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 4px 16px rgba(0,0,0,.04);padding:24px}
+    h1{margin:8px 0 12px;font-size:28px}
+    .lead{color:var(--muted);margin-bottom:14px}
+    ul{margin:12px 0 18px 18px}
+    li{margin:6px 0}
+    .code{background:#0b1020;color:#d1e7ff;border-radius:10px;padding:16px;overflow:auto;font-family:ui-monospace,Consolas,Monaco,Menlo,monospace}
+    .pill{display:inline-block;border:1px solid #cfeedd;background:#eef7f1;color:#14532d;padding:2px 8px;border-radius:999px;font-size:12px;margin-left:6px}
+    .note{font-size:12px;color:var(--muted);margin-top:12px}
+    .actions{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+    .btn{border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 14px;cursor:pointer}
+    .btn.ok{background:var(--ok);border-color:var(--ok);color:#fff}
+    a{color:#2563eb;text-decoration:none}
+  </style>
+</head>
+<body>
+  <!-- 상단 URL 표시(캡처용) -->
+  <div class="bar">
+    <div class="dot d1"></div><div class="dot d2"></div><div class="dot d3"></div>
+    <div class="url">https://starbuild-auto.onrender.com/naver/callback?code=XXXXXXXX&state=starbuild-blog</div>
+  </div>
+
+  <main class="wrap">
+    <div class="card">
+      <h1>연동 완료! <span class="pill">Callback Success</span></h1>
+      <div class="lead">네이버 OAuth 인증이 정상적으로 완료되었습니다.</div>
+
+      <ul>
+        <li>Authorization Code 수신 ✔</li>
+        <li>토큰 교환 성공 ✔</li>
+        <li>저장 위치: <code>data/naver_tokens.json</code></li>
+      </ul>
+
+      <div class="code" aria-label="샘플 JSON">
+<pre>{
+  "message": "tokens saved",
+  "tokens": {
+    "access_token": "******",
+    "refresh_token": "******",
+    "token_type": "bearer",
+    "expires_in": 3600
+  }
+}</pre>
+      </div>
+
+      <div class="note">
+        ※ 실제 화면에서는 민감정보가 노출되지 않도록 마스킹 처리됩니다. 본 페이지는 검수용 정적 예시입니다.
+      </div>
+
+      <div class="actions">
+        <button class="btn" onclick="location.href='index.html'">홈으로</button>
+        <a class="btn ok" href="/health">/health 상태 확인</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
