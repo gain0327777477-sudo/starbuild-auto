@@ -1,0 +1,11 @@
+# secrets
+.env
+data/
+naver_tokens.json
+
+# python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
