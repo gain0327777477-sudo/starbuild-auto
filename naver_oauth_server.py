@@ -21,4 +21,6 @@ def naver_callback():
     return f"연동 완료! tokens saved. 파일: data/naver_tokens.json<br>{tok}"
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5000)
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", "10000"))  # Render가 주입하는 포트를 사용
+    app.run(host="0.0.0.0", port=port)           # 외부 접속 허용
