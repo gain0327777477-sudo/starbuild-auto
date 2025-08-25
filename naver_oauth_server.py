@@ -32,3 +32,8 @@ def naver_callback():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", "10000"))  # Render가 주입하는 포트를 사용
     app.run(host="0.0.0.0", port=port)           # 외부 접속 허용
+
+@app.get("/health")
+def health():
+    return {"ok": True}
+
