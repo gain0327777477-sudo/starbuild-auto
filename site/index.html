@@ -3,88 +3,66 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Starbuild Access – 네이버 로그인</title>
-
-  <!-- 검수용 설명이 검색에 과도하게 노출되지 않도록 하고 싶다면 주석 해제
-  <meta name="robots" content="noindex,follow">
-  -->
-
+  <title>Starbuild Access – 네이버 간편 로그인</title>
   <style>
-    :root{
-      --green:#03c75a; --bg:#f7f8fa; --ink:#111; --sub:#61646b; --line:#e6e8eb;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Apple SD Gothic Neo,Noto Sans KR,Helvetica,Arial,sans-serif;
-      color:var(--ink); background:var(--bg);
-    }
+    :root{--green:#03c75a;--bg:#f7f8fa;--ink:#111;--sub:#61646b;--line:#e6e8eb}
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Apple SD Gothic Neo,Noto Sans KR,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
     .wrap{max-width:920px;margin:0 auto;padding:48px 20px}
     header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
     .logo{font-weight:800;letter-spacing:.2px}
     .badge{display:inline-block;padding:4px 10px;border-radius:999px;background:#eaf8f0;color:#0a7b3c;font-weight:700;font-size:12px}
-    .card{
-      background:#fff;border:1px solid var(--line);border-radius:16px;
-      padding:36px; box-shadow:0 6px 24px rgba(17,17,17,.06);
-    }
+    .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:36px;box-shadow:0 6px 24px rgba(17,17,17,.06)}
     h1{margin:0 0 12px;font-size:28px}
     p.lead{margin:0 0 18px;color:var(--sub);line-height:1.6}
     ul{margin:16px 0 0;padding:0 0 0 18px;color:#2b2f36;line-height:1.65}
-    .cta{
-      margin-top:28px; display:flex; gap:12px; flex-wrap:wrap;
-    }
-    .btn{
-      display:inline-flex;align-items:center;gap:10px;
-      padding:14px 18px;border-radius:12px;border:1px solid var(--line);
-      background:#fff;color:var(--ink);text-decoration:none;font-weight:700;
-    }
-    .btn.naver{
-      background:var(--green); color:#fff; border-color:var(--green);
-    }
+    .cta{margin-top:28px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 18px;border-radius:12px;border:1px solid var(--line);background:#fff;color:var(--ink);text-decoration:none;font-weight:700}
+    .btn.naver{background:var(--green);color:#fff;border-color:var(--green)}
     .btn small{opacity:.8;font-weight:600}
+    nav{margin-bottom:12px;display:flex;gap:12px;flex-wrap:wrap}
+    nav a{color:#3b82f6;text-decoration:none;font-weight:600}
     footer{margin-top:28px;color:var(--sub);font-size:13px;display:flex;gap:14px;flex-wrap:wrap}
     footer a{color:inherit;text-decoration:none}
-    @media (max-width:520px){
-      .card{padding:24px}
-      h1{font-size:22px}
-    }
+    @media (max-width:520px){.card{padding:24px} h1{font-size:22px}}
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
       <div class="logo">Starbuild Access</div>
-      <span class="badge">OAuth 인증</span>
+      <span class="badge">간편 로그인(OAuth)</span>
     </header>
 
+    <nav>
+      <a href="/about.html">서비스 소개</a>
+      <a href="/privacy.html">개인정보처리방침</a>
+      <a href="/tos.html">이용약관</a>
+    </nav>
+
     <main class="card" role="main" aria-label="서비스 소개 및 로그인">
-      <h1>안전한 본인확인을 위한 네이버 로그인</h1>
+      <h1>네이버 계정으로 간편하게 로그인하세요</h1>
       <p class="lead">
-        Starbuild Access는 <strong>단순 OAuth 인증</strong> 서비스입니다.  
-        사용자가 네이버 계정으로 로그인할 때 <strong>본인 확인만을 목적</strong>으로 하며,
-        <strong>이메일 주소</strong>는 회원 식별 및 서비스 알림 전달을 위해 <strong>최소한으로 요청</strong>합니다.
-        그 외의 불필요한 개인정보는 <strong>수집하지 않습니다.</strong>
+        Starbuild Access는 <strong>네이버 OAuth 2.0</strong>을 이용한 <strong>간편 로그인</strong> 기능을 제공합니다.
+        로그인 과정에서 <strong>이메일 주소</strong>만을 <strong>회원 식별 및 알림 전달</strong> 목적에 한해 최소한으로 요청하며,
+        그 외 불필요한 개인정보는 수집하지 않습니다.
       </p>
 
       <ul>
-        <li>네이버 계정으로 안전하게 로그인 (OAuth 2.0)</li>
-        <li>필수 수집 항목: <strong>이메일 주소</strong> (회원 식별, 알림 발송 목적)</li>
+        <li>네이버 계정으로 별도 회원가입 없이 빠른 로그인</li>
+        <li>필수 수집 항목: <strong>이메일 주소</strong> (식별/알림 목적)</li>
         <li>불필요한 개인정보 <strong>일체 미수집</strong></li>
       </ul>
 
       <div class="cta">
         <a class="btn naver" href="/naver_auth" aria-label="네이버 계정으로 로그인">
-          <!-- 간단한 네이버 아이콘 형태 -->
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
             <rect width="24" height="24" rx="4" fill="white" />
             <path d="M10.4 7.2v4.48L13.6 7.2H16v9.6h-2.4v-4.48L10.4 16.8H8V7.2h2.4z" fill="#03c75a"/>
           </svg>
           네이버로 로그인
         </a>
-
         <a class="btn" href="/health"><small>상태확인</small></a>
-        <a class="btn" href="/privacy" aria-label="개인정보처리방침 보기"><small>개인정보처리방침</small></a>
-        <a class="btn" href="/tos" aria-label="이용약관 보기"><small>이용약관</small></a>
       </div>
     </main>
 
